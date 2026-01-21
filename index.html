@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glimmer Chaos Minimal</title>
+    <title>Glimmer Chaos Yellow Button</title>
     
     <script src="https://unpkg.com/tone"></script>
     
@@ -34,7 +34,6 @@
             left: 50%;
             transform: translate(-50%, -50%);
             z-index: 10;
-            /* Rimossi sfondo e padding per un look minimale */
         }
         /* Stile per il pulsante "Play" grande */
         #start-btn {
@@ -43,7 +42,10 @@
             border-radius: 50%; /* Cerchio perfetto */
             font-size: 50px; /* Icona play grande */
             cursor: pointer;
-            background: white;
+            
+            /* MODIFICA QUI: Sfondo giallo */
+            background: yellow; 
+            
             border: none;
             transition: background 0.3s, transform 0.1s;
             display: flex;
@@ -53,11 +55,12 @@
             color: black;
         }
         #start-btn:hover {
-            background: #ddd;
+            /* MODIFICA QUI: Hover dorato */
+            background: #FFD700; 
             transform: scale(1.05);
         }
         
-        /* Stile aggiornato per la scritta (senza ombra) */
+        /* Stile per la scritta */
         #subtitle {
             position: fixed;
             bottom: 40px;
@@ -74,8 +77,6 @@
             
             z-index: 5;
             pointer-events: none;
-            
-            /* Ombra RIMOSSA */
         }
     </style>
 </head>
@@ -197,7 +198,7 @@
         }
 
         function visualTrigger() {
-            // Intensità pulsazione dinamica (aumenta con il caos)
+            // Intensità pulsazione dinamica
             const currentPulseStrength = 1.05 + (corruptionLevel * 0.35);
 
             circles.forEach(c => {
@@ -227,7 +228,9 @@
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
             const baseOpacity = 1 - (corruptionLevel * 0.2); 
-            ctx.fillStyle = 'white';
+            
+            // Colore dei cerchi
+            ctx.fillStyle = 'yellow'; 
 
             for (let i = circles.length - 1; i >= 0; i--) {
                 let circle = circles[i];
